@@ -30,8 +30,8 @@ export default function Auth() {
                 });
 
                 localStorage.setItem('token', res.data.token);
-                localStorage.setItem('userType', res.data.userType);
-                localStorage.setItem('email', res.data.email);
+                localStorage.setItem('userType', form.userType);
+                localStorage.setItem('email', form.email);
                 navigate('/');
 
             } else {
@@ -61,7 +61,7 @@ export default function Auth() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-primary-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-primary-950/20 px-4 py-12">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-primary-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-primary-950/20 px-4 py-8">
             <div className="w-full max-w-md">
 
                 {/* Logo */}
@@ -87,31 +87,29 @@ export default function Auth() {
                 {/* Card */}
                 <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-slate-700/50 p-8">
 
-                    {/* Role Toggle (Register only) */}
-                    {!isLogin && (
-                        <div className="flex gap-2 p-1 bg-gray-100 dark:bg-slate-700/50 rounded-xl mb-6">
-                            <button
-                                type="button"
-                                onClick={() => setForm({ ...form, userType: 'Candidate' })}
-                                className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Candidate'
-                                        ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
-                                        : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-                                    }`}
-                            >
-                                <User size={16} /> {t('candidate')}
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => setForm({ ...form, userType: 'Company' })}
-                                className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Company'
-                                        ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
-                                        : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-                                    }`}
-                            >
-                                <Building2 size={16} /> {t('company')}
-                            </button>
-                        </div>
-                    )}
+                    {/* Role Toggle (Both Login and Register) */}
+                    <div className="flex gap-2 p-1 bg-gray-100 dark:bg-slate-700/50 rounded-xl mb-6">
+                        <button
+                            type="button"
+                            onClick={() => setForm({ ...form, userType: 'Candidate' })}
+                            className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Candidate'
+                                ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
+                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+                                }`}
+                        >
+                            <User size={16} /> {t('candidate')}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setForm({ ...form, userType: 'Company' })}
+                            className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Company'
+                                ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
+                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+                                }`}
+                        >
+                            <Building2 size={16} /> {t('company')}
+                        </button>
+                    </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Email */}
@@ -145,7 +143,7 @@ export default function Auth() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-bold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-bold shadow-lg shadow-primary-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <Loader2 size={20} className="animate-spin" />

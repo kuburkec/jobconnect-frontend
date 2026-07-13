@@ -1,0 +1,40 @@
+# === BACKEND (.NET) ===
+backend/bin/
+backend/obj/
+backend/*.db
+backend/*.db-journal
+backend/*.db-shm
+backend/*.db-wal
+backend/.vs/
+backend/.vscode/
+backend/Properties/launchSettings.json
+
+# === FRONTEND (Node/React) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.log
+frontend/.env.local
+frontend/.env.*.local
+
+# === ROOT LEVEL (your mess) ===
+node_modules/
+bin/
+obj/
+.vs/
+.vercel/
+*.db
+*.db-shm
+*.db-wal
+*.user
+*.suo
+.editorconfig
+.env.local
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === OS ===
+.DS_Store
+Thumbs.db

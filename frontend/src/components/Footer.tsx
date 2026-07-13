@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import { Briefcase } from 'lucide-react';
+=======
+import { Briefcase } from 'lucide-react';
+>>>>>>> e54e3b2a04a103b3f29a646e535a265b02b8330f
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -58,7 +62,11 @@ export default function Footer() {
                 <div className="border-t border-gray-200 dark:border-slate-700 pt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         <p className="text-sm text-gray-600 dark:text-gray-400">
+<<<<<<< HEAD
                             © {2026} JobConnect. Created by B.I Kubur. All rights reserved.
+=======
+                            © {currentYear} JobConnect. All rights reserved.
+>>>>>>> e54e3b2a04a103b3f29a646e535a265b02b8330f
                         </p>
                         <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
                             <a href="#" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Twitter</a>

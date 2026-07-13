@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Mail, Lock, ArrowRight, User, Building2, Loader2, Sparkles } from 'lucide-react';
 import api from '../services/api';
@@ -93,8 +93,13 @@ export default function Auth() {
                             type="button"
                             onClick={() => setForm({ ...form, userType: 'Candidate' })}
                             className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Candidate'
+<<<<<<< HEAD
                                 ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
                                 : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+=======
+                                    ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
+                                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+>>>>>>> e54e3b2a04a103b3f29a646e535a265b02b8330f
                                 }`}
                         >
                             <User size={16} /> {t('candidate')}
@@ -103,8 +108,13 @@ export default function Auth() {
                             type="button"
                             onClick={() => setForm({ ...form, userType: 'Company' })}
                             className={`flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all ${form.userType === 'Company'
+<<<<<<< HEAD
                                 ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
                                 : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+=======
+                                    ? 'bg-white dark:bg-slate-600 text-primary-600 dark:text-primary-400 shadow-sm'
+                                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+>>>>>>> e54e3b2a04a103b3f29a646e535a265b02b8330f
                                 }`}
                         >
                             <Building2 size={16} /> {t('company')}
